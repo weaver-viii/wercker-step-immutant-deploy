@@ -3,8 +3,8 @@
 set -e
 
 function findcontainer() {
-  # Pass the image name to grep for and (optionally) any flags to pass
-  # to docker ps
+  # Pass the container name to grep for and (optionally) any flags to
+  # pass to docker ps
   echo $(docker ps $2 |
          tail -n +2 |
          awk '{print $1, $2}' |
