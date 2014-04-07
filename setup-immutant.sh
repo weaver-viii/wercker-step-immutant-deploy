@@ -30,8 +30,14 @@ done
 # Prepend --volumes-from to each container id
 VOLUMES_FROMS="${CONTAINER_IDS[@]/#/ --volumes-from }"
 
+IMMUTANT_IMAGE="quay.io/democracyworks/immutant"
+IMMUTANT_PORT=8080
+
+DOCKER_CMD="docker run -d -p $IMMUTANT_PORT ${VOLUMES_FROMS[@]} $IMMUTANT_IMAGE"
+
 # Launch new immutant container with those volumes
-docker run -d -p 8080 ${VOLUMES_FROMS[@]} quay.io/democracyworks/immutant
+echo "Running: $DOCKER_CMD"
+eval $DOCKER_CMD
 
 # Stop old container
 if [[ $OLD_IMMUTANT_CONTAINER ]]; then
