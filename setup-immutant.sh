@@ -33,7 +33,7 @@ VOLUMES_FROMS="${CONTAINER_IDS[@]/#/ --volumes-from }"
 IMMUTANT_IMAGE="quay.io/democracyworks/immutant"
 IMMUTANT_PORT=8080
 
-DOCKER_CMD="docker run -d -p $IMMUTANT_PORT ${VOLUMES_FROMS[@]} $IMMUTANT_IMAGE"
+DOCKER_CMD="docker run -d -e ENVIRONMENT=$ENVIRONMENT -p $IMMUTANT_PORT ${VOLUMES_FROMS[@]} $IMMUTANT_IMAGE"
 
 # Launch new immutant container with those volumes
 echo "Running: $DOCKER_CMD"
