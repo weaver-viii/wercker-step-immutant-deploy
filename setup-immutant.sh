@@ -35,6 +35,9 @@ IMMUTANT_PORT=8080
 
 DOCKER_CMD="docker run -d -e ENVIRONMENT=$1 -p $IMMUTANT_PORT ${VOLUMES_FROMS[@]} $IMMUTANT_IMAGE"
 
+# Pull the latest image
+docker pull $IMMUTANT_IMAGE
+
 # Launch new immutant container with those volumes
 echo "Running: $DOCKER_CMD"
 eval $DOCKER_CMD
