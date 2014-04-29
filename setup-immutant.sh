@@ -44,8 +44,8 @@ eval $DOCKER_CMD
 
 # Stop old container
 if [[ $OLD_IMMUTANT_CONTAINER ]]; then
-  echo "Waiting 15 seconds for the new container to come up..."
-  sleep 15
+  echo "Waiting 30 seconds for the new container to come up..."
+  sleep 30
   echo "Stopping the old container"
   docker stop $OLD_IMMUTANT_CONTAINER
 fi
