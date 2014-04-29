@@ -33,7 +33,7 @@ VOLUMES_FROMS="${CONTAINER_IDS[@]/#/ --volumes-from }"
 IMMUTANT_IMAGE="quay.io/democracyworks/immutant"
 IMMUTANT_PORT=8080
 
-DOCKER_CMD="docker run -d --link papertrail:syslog -e IMMUTANT_ENVIRONMENT=$1 -p $IMMUTANT_PORT ${VOLUMES_FROMS[@]} $IMMUTANT_IMAGE"
+DOCKER_CMD="docker run -d --link papertrail:syslog -e IMMUTANT_ENVIRONMENT=$1 -p 22 -p $IMMUTANT_PORT ${VOLUMES_FROMS[@]} $IMMUTANT_IMAGE"
 
 # Pull the latest image
 docker pull $IMMUTANT_IMAGE
