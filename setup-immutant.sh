@@ -8,12 +8,12 @@ function findcontainer() {
   echo $(docker ps $2 |
          tail -n +2 |
          awk '{print $1, $2}' |
-         grep $1 |
+         grep "[/[:space:]]$1:" |
          head -n 1 |
          awk '{print $1}')
 }
 
-declare -a SERVICES=('usps-processor' 'ballot-scout' 'nixon' 'hermes-processor')
+declare -a SERVICES=('usps-processor' 'ballot-scout' 'nixon' 'hermes')
 declare -a CONTAINER_IDS=()
 
 # Find old container
