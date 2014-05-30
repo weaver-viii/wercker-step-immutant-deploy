@@ -17,7 +17,7 @@ declare -a SERVICES=('usps-processor' 'ballot-scout' 'nixon' 'hermes' 'sendgrid-
 declare -a CONTAINER_IDS=()
 
 # Find old container
-OLD_IMMUTANT_CONTAINER=$(findcontainer quay.io/democracyworks/immutant:latest)
+OLD_IMMUTANT_CONTAINER=$(findcontainer quay.io/democracyworks/immutant)
 
 # Find containers to mount volumes from
 for SERVICE in "${SERVICES[@]}"; do
