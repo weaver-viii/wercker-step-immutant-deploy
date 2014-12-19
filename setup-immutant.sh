@@ -13,7 +13,7 @@ function findcontainer() {
          awk '{print $1}')
 }
 
-declare -a SERVICES=('usps-processor' 'ballot-scout' 'nixon' 'hermes' 'sendgrid-monitor')
+declare -a SERVICES=('usps-processor' 'ballot-scout' 'address-works' 'hermes' 'sendgrid-monitor')
 declare -a CONTAINER_IDS=()
 
 # Find old container
